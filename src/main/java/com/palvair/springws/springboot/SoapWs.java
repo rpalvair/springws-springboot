@@ -15,7 +15,7 @@ public class SoapWs {
 	
 	@PayloadRoot(namespace = namespaceUri, localPart = "HelloWorldRequest")
 	@ResponsePayload
-	public HelloWorldResponse getCountry(@RequestPayload HelloWorldRequest request) {
+	public HelloWorldResponse sayHello(@RequestPayload HelloWorldRequest request) {
 		HelloWorldResponse response = new HelloWorldResponse();
 		Assert.notNull(request.getName(), "Name should not be null");
 		Assert.hasLength(request.getName(), "Name should not be empty");
