@@ -19,8 +19,8 @@ public class ApplicationIT {
 	private SoapWsClient soapWsClient;
 	
 	@Test
-	public void callSopaWs() {
+	public void callSoapWs() {
 		HelloWorldResponse helloWorldResponse = soapWsClient.getHelloWorld("widdy");
-		log.info("name = "+helloWorldResponse.getName());
+		log.info("response = "+helloWorldResponse.getContent());
 	}
 }

@@ -1,5 +1,7 @@
 package com.palvair.springws.springboot;
 
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -15,7 +17,9 @@ public class SoapWs {
 	@ResponsePayload
 	public HelloWorldResponse getCountry(@RequestPayload HelloWorldRequest request) {
 		HelloWorldResponse response = new HelloWorldResponse();
-		response.setName(request.getName());
+		Assert.notNull(request.getName(), "Name should not be null");
+		Assert.hasLength(request.getName(), "Name should not be empty");
+		response.setContent("Hello "+StringUtils.capitalize(request.getName()));
 		return response;
 	}
 }

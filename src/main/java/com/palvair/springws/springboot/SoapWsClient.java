@@ -12,7 +12,7 @@ public class SoapWsClient extends WebServiceGatewaySupport {
 		HelloWorldRequest request = new HelloWorldRequest();
 		request.setName(name);
 
-		log.info("Requesting forecast for " + name);
+		log.info("Requesting helloworld for " + name);
 
 		/*
 		 * HelloWorldResponse response = (HelloWorldResponse)
